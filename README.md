@@ -10,7 +10,7 @@ This is an unpublished iOS private chat room app developed in Swift
 - Incorporated existing open source libraries and frameworks from Cocoapods to enhance app user experience.
 
 ## Finished App
-![Finished App](https://github.com/londonappbrewery/Images/blob/master/Flash%20Chat.gif)
+![Finished App](https://github.com/YichengZheng/letsChatApp/blob/master/GoogleSignInPic.gif)
 
 
 
