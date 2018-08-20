@@ -9,8 +9,15 @@ target 'Flash Chat' do
 
 pod 'Firebase'
 pod 'Firebase/Auth'
+pod 'GoogleSignIn'
 pod 'Firebase/Database'
 pod 'SVProgressHUD'
 pod 'ChameleonFramework'
+pod 'FBSDKCoreKit'
+pod 'FBSDKShareKit'
+pod 'FBSDKLoginKit'
+pod 'FacebookCore'
+pod 'FacebookLogin'
+pod 'FacebookShare'
 
 end

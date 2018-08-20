@@ -22,4 +22,9 @@ class WelcomeViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    @IBAction func logInButton(_ sender: UIButton) {
+
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "logInVC")
+        present(vc, animated: true, completion: nil)
+    }
 }

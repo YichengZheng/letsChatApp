@@ -7,9 +7,10 @@
 import UIKit
 import Firebase
 import ChameleonFramework
+import GoogleSignIn
 
 // ChatViewController is the delegate of UITableViewDelegate
-class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, GIDSignInUIDelegate {
     
     // Declare instance variables here
     var messageArray : [Message] = [Message]()
@@ -183,8 +184,16 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         //TODO: Log out the user and send them back to WelcomeViewController
         do{
             try Auth.auth().signOut()
-            // after signed out, return back to the root view controller
-            navigationController?.popToRootViewController(animated: true)
+            GIDSignIn.sharedInstance().signOut()
+            
+//            let signInPage = self.storyboard?.instantiateViewController(withIdentifier: "welcomeVC")
+//            let appDelegate = UIApplication.shared.delegate
+//            appDelegate?.window??.rootViewController = signInPage
+//
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "welcomeVC")
+            present(vc, animated: true, completion: nil)
+//             after signed out, return back to the root view controller
+            //navigationController?.popToRootViewController(animated: true)
         }
         catch{
             print("error during logout")
